@@ -1,5 +1,3 @@
-# Dropout Feature Ranking 実験レポート
-
 ## 概要
 論文 [Dropout Feature Ranking for Deep Learning Models](https://arxiv.org/abs/1712.08645) で提案されている Dropout Feature Ranking の手法を TensorFlow で行った。
 またその際に論文 [Concrete Dropout](https://arxiv.org/abs/1705.07832) で提案されているConcrete Relaxation の手法を用いた。
