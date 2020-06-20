@@ -33,20 +33,6 @@ Numpy 1.14.5
 TensorFlow 1.10.0
 ```
 
-## 関連ファイルについて
-
-一連の実験は、下記のファイルを上から順番に実行していくことで再現ができる。
-
-1. `impl.py`: Dropout Feature Ranking の実装。
-1. `01.quicklook.ipynb`: `HirosakiData`のデータ閲覧用ノートブック。
-1. `02.preprocess_htn.ipynb`: `HTN`のデータセットを作成するための前処理。
-1. `03.analyze_htn.ipynb`: `HTN`に対して、Dropout Feature Ranking を適用したファイル。 
-1. `04.analyze_mnist.ipynb`: `MNIST`に対して、Dropout Feature Ranking を適用したファイル。 
-1. `05.analyze_support2.ipynb`: `Support2`に対して、Dropout Feature Ranking を適用したファイル。 
-1. `06.preprocess_dm.ipynb`: `DM`のデータセットを作成するための前処理。
-1. `07.analyze_dm.ipynb`: `DM`に対して、Dropout Feature Ranking を適用したファイル。 
-
-
 ## Dropout Feature Ranking のアルゴリズムの実装について
 
 `impl.py` を参照のこと。
