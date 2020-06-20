@@ -165,19 +165,7 @@ with tf.Session() as sess:
                 })
 ```
 
-## Dropout Feature Ranking の各データセットへの適用について。
-
-Dropout Feature Ranking と RandomForest によって得られる特徴量重要度を比較し、下記２点を確認した。
-1. 両モデルが近しい特徴量重要度を出力している
-1. Dropout Feature Ranking による手法がよりスパースな解を得られている
-
-ただし、不均衡データである DM のデータセットに関しては双方で多少異なる結果が出力された。
-（糖尿病に関してネットで特徴量の意味を調べた限りにおいては、Dropout Feature Ranking の提示している特徴量重要度のほうが正しそうな感じをうけた。）
-
-
-
-
-### MNIST への適用
+## Dropout Feature Ranking の MNIST への適用
 #### RandomForest による特徴量重要度
 
 ![](./images/rf_mnist.png) 
@@ -188,93 +176,6 @@ Dropout Feature Ranking と RandomForest によって得られる特徴量重要
 
 
 両モデルともに画像中央の数字の描かれている領域を重要とみなしているのがわかる。Dropout Feature Ranking のほうがよりスパースな解を得られている。
-
-### Support2 への適用
-#### RandomForest による特徴量重要度ランキング
-
-![](./images/rf_support2.png)
-
-#### Dropout Feature Ranking による特徴量重要度ランキング
-
-![](./images/dfr_support2.png)
-
-
-
-### HTN への適用
-#### RandomForest による特徴量重要度ランキング
-1. 四肢血圧_RbaPWV         0.038710
-1. 脚点                  0.037129
-1. 四肢血圧_LbaPWV         0.016552
-1. 両足-X_50kHz          0.013252
-1. 健康状況_服薬_処方薬の有無_2    0.010943
-
-![](./images/rf_htn.png)
-
-#### Dropout Feature Ranking による特徴量重要度ランキング
-1. 四肢血圧_RbaPWV     0.998976
-1. 四肢血圧_LbaPWV     0.998653
-1. delta_lm_AUC    0.004743
-1. lg_AUC          0.001910
-1. lm_AUC          0.001367
-
-![](./images/dfr_htn.png)
-
-
-### DM への適用
-#### RandomForest による特徴量重要度ランキング
-1. 四肢血圧_LbaPWV         0.005939
-1. 内脂肪レベル              0.004988
-1. 健康状況_医師_脂質異常症_なし    0.003971
-1. 左半身-X_250kHz        0.003890
-1. 左足-筋肉量              0.003876
-1. 健康状況_服薬_高血圧治療薬      0.003858
-1. 体重                  0.003643
-1. 健康状況_医師_高血圧_治療中     0.003612
-1. プロリン                0.003527
-1. 血清鉄                 0.003339
-1. 両足-X_250kHz         0.003313
-1. 左足-R_50kHz          0.003311
-1. 左腕-R_50kHz          0.003274
-1. 両足-R_50kHz          0.003176
-1. クレアチニン              0.003176
-1. 収縮期血圧               0.003079
-1. 四肢血圧_RABI           0.002903
-1. 2014PG1             0.002838
-1. 高血圧治療薬              0.002789
-1. 総コレステロール            0.002785
-
-![](./images/rf_dm.png)
-
-#### Dropout Feature Ranking による特徴量重要度ランキング
-1. delta_lm_AUC          0.001090
-1. lm_AUC                0.000776
-1. RCNH                  0.000745
-1. delta_RCNH            0.000501
-1. delta_lg_AUC          0.000429
-1. lm_AUC_再測定            0.000419
-1. RULE                  0.000332
-1. lg_AUC_再測定            0.000312
-1. lg_AUC                0.000308
-1. DiagRuleCode          0.000293
-1. 民間療法_健康器具_金額          0.000259
-1. ルミノール_PH              0.000243
-1. ルミノール再測定_PH           0.000241
-1. delta_DiagRuleCode    0.000224
-1. ルミノール_PH_1            0.000195
-1. ルミノール_PH_3            0.000187
-1. delta_ルミノール_PH        0.000167
-1. NextAimWalk           0.000162
-1. OZ_HE_CFI             0.000158
-1. 白血球数                  0.000147
-
-![](./images/dfr_dm.png)
-
-各モデルで違う結果となった。
-
-## まとめ
-
-Variational Dropout による特徴量重要度の分析手法である Dropout Feature Ranking を実装し、
-MNIST, Support2, HTN, DM の各データセットに関して、Dropout Feature Ranking と RandomForest によって得られる特徴量重要度を比較した。
 
 
   
